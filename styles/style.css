@@ -2,29 +2,125 @@ html {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 10px;
+    color: white;
     width: 100%;
     height: 100%;
 }
 
 body {
+    background-color: #F52A68;
     width: 100%;
     min-height: 100%;
     margin: 0;
 }
 
-/* GLOBAL TEXT STYLES */
-
-h1 {
-    font-family: 'Raleway', sans-serif;
-    color: #F52A68;
-    font-weight: 800;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/*background style */
+.page--white{
+    background-color: white;
 }
 
-h2 {
-    
+.page--grey {
+    background-color: #525252;
+}
+
+/*Text color */
+.pink {
+    color: #F52A68;
+}
+
+.grey {
+    color: #525252;
+}
+
+.white {
+    color: white;
+}
+
+.hero--image {
+    object-fit: cover;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+}
+
+.hero--logo {
+    width: 80%;
+    height: 80%;
+}
+
+.hero--arrow {
+    display: none;
+}
+
+.header--title {
+    text-transform: uppercase;
+}
+
+.header--light {
+    font-weight: 300;
+}
+
+.nav {
+    margin: 10px auto;
+}
+
+.nav--list {
+    text-align: center;
+}
+
+.nav--list-item {
+    list-style-type: none;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.nav--link {
+    text-decoration: none;
+}
+
+.nav--hamburger {
+    float: right;
+    margin-right: 15px;
+    width: 3rem;
+    height: 2.5rem;
+}
+
+/* GRID STYLE */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "nav"
+        "hero"
+        "events"
+        "music"
+        "img-sarah"
+        "img-group"
+        "text"
+        "portraits"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 800px 400px 500px 400px 500px 800px 500px; 
+    height: 100vh;
+    width: 100%;
+}
+
+.nav__container {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 1;
+    grid-template-areas: 
+        "header"
+        "menu";
+    /* order: 2; */
+}
+
+.hero--container {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1;
 }
 
 font-family: 'Caveat Brush', cursive;
