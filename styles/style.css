@@ -36,14 +36,23 @@ body {
 .white {
     color: white;
 }
-
-.hero--logo {
-    width: 80%;
-    height: 80%;
+.image-overlay--grey {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background: rgba(82,82,82,0.35);
 }
-
-.hero--arrow {
-    display: none;
+.image-overlay--pink {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background: rgba(245,42,104,0.35);
 }
 
 .header--title {
@@ -90,7 +99,7 @@ body {
         "portraits"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 75px 1fr 1015px 460px 320px 275px; 
+    grid-template-rows: 75px 1fr 1015px 460px 376px 275px; 
     height: 100vh;
     width: 100%;
 }
@@ -149,6 +158,7 @@ img.hero--logo {
 }
 img.hero--arrow {
     height: 27px;
+    opacity: 0.0;
 }
 
 /*BLOCKS*/
@@ -173,7 +183,7 @@ img.hero--arrow {
 }
 .event-one {
     display: grid;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 }
 .event-two {
     display: grid;
@@ -186,16 +196,45 @@ img.hero--arrow {
     color: white;
     text-transform: uppercase;
     margin: 0;
+    padding: 0;
     line-height: 3rem;
 }
 .events--info {
     font-size: 1.6rem;
     line-height: 2rem;
-    margin-top: .5rem;
+    margin-top: 0;
 }
 .music--container {
     grid-area: music;
     display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 3;
+    padding: 20px;
+}
+.music--playbutton--container {
+    display: grid;
+    align-content: center;
+    justify-content: left;
+    margin: 0;
+}
+.music--titles--container {
+    display: grid;
+    align-content: center;
+}
+.music--link--container {
+    display: grid;
+    align-content: center;
+    grid-column: -1 / 1;
+}
+.music-titles {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin: 0;
+}
+.music-artist {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin: 0;
 }
 .image-sarah--container {
     grid-area: sarah;
@@ -204,8 +243,8 @@ img.hero--arrow {
     grid-template-columns: 1fr;
 }
 .image-sarah--container img {
-    width: 100%;
-    height: 100%;
+    width: 125%;
+    height: 125%;
     object-fit: cover;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -245,10 +284,14 @@ img.hero--arrow {
     display: grid;
     grid-area: description;
     height: 230px;
+    padding: 0px 20px;
+    align-content: center;
 }
 .text--description {
     font-family: 'Caveat Brush', cursive;
-    font-size: 2rem;
+    font-size: 2.25rem;
+    margin: 0;
+    opacity: 0.75;
 }
 
 /*PORTRAITS*/
@@ -318,22 +361,255 @@ footer {
     grid-area: footer;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3;
+    grid-template-rows: 4;
     grid-template-areas:
         "name"
         "social"
         "links"
+        "copyright"
 }
 .footer--name--container {
     grid-area: name;
     display: grid;
+    justify-content: center;
+    margin: 10px;
+    height: 60px;
 }
 .footer--social--container {
     grid-area: social;
     display: grid;
+    grid-template-columns: repeat(2, 75px);
+    justify-content: center;
+    height: 50px;
+}
+.footer--social--icon {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.footer--social--icon img {
+    height: 30px;
+    width: 30px;
 }
 .footer--links--container {
     grid-area: links;
     display: grid;
+    justify-content: center;
+}
+.footer--title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+}
+.footer--title--light {
+    font-weight: 400;
+    text-align: center;
+}
+.footer--nav--list {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+}
+.footer--nav--list-item {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    list-style-type: none;
+    /* text-align: center; */
+    margin: 0;
+    display: inline-block;
+    padding: 12px;
+}
+.footer--copyright--container {
+    grid-area: copyright;
+    display: grid;
+
+}
+.footer--copyright {
+    text-align: center;
 }
 
+
+/*DESKTOP MEDIA QUERIES*/
+
+@media only screen 
+and (min-width: 600px) 
+and (max-width: 800px) {
+
+.hero--arrow {
+    opacity: 1.0;
+}
+
+.grid-container {
+    grid-template-rows: 70px 1fr 450px 230px 200px 175px;
+}
+
+img.hero--logo {
+    width: 40%;
+}
+
+.blocks--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2;
+    grid-template-areas:
+        "dates sarah"
+        "music sarah";
+}
+
+.events--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+}
+.events--info {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.about--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "group description";
+}
+.links--caps {
+    font-size: 1.2rem;
+}
+
+.text--container {
+    padding: 0px 40px;
+}
+
+.portraits--container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1;
+    grid-template-areas:
+        "arlie kris dan dave";
+}
+footer {
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 50px 50px 75px;
+    grid-template-areas:
+        "name links"
+        "social links"
+        "copyright links";
+}
+.footer--name--container {
+    justify-content: left;
+    height: 50px;
+    padding: 0 0 0 25px;
+    margin: 0;
+}
+.footer--social--container {
+    justify-content: left;
+}
+.footer--links--container {
+    justify-content: right;
+    padding-right: 25px;
+    padding-top: 20px;
+}
+.footer--nav--list {
+    text-align: right;
+}
+.footer--nav--list-item {
+    display: block;
+    line-height: 1.5rem;
+    padding: 5px;
+}
+.footer--copyright--container {
+    align-items: end;
+    padding-bottom: 10px;
+}
+.footer--copyright {
+    text-align: left;
+    padding-left: 25px;
+}
+
+}
+
+@media only screen 
+and (min-width: 800px) {
+    
+img.hero--arrow {
+    opacity: 0.0;
+}
+
+.grid-container {
+    grid-template-rows: 70px 1fr 400px 230px 250px 175px;
+}
+
+img.hero--logo {
+    width: 40%;
+}
+
+.blocks--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2;
+    grid-template-areas:
+        "dates sarah"
+        "music sarah";
+}
+
+.events--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+}
+
+.links--caps {
+    text-align: right;
+}
+
+.about--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "group description";
+}
+
+.text--container {
+    padding: 0px 40px;
+}
+
+.portraits--container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1;
+    grid-template-areas:
+        "arlie kris dan dave";
+}
+
+footer {
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 50px 50px 75px;
+    grid-template-areas:
+        "name links"
+        "social links"
+        "copyright links";
+}
+.footer--name--container {
+    justify-content: left;
+    height: 50px;
+    padding: 0 0 0 25px;
+    margin: 0;
+}
+.footer--social--container {
+    justify-content: left;
+}
+.footer--links--container {
+    justify-content: right;
+    padding-right: 25px;
+    padding-top: 20px;
+}
+.footer--nav--list {
+    text-align: right;
+}
+.footer--nav--list-item {
+    display: block;
+    line-height: 1.5rem;
+    padding: 5px;
+}
+.footer--copyright--container {
+    align-items: end;
+    padding-bottom: 10px;
+}
+.footer--copyright {
+    text-align: left;
+    padding-left: 25px;
+}
+}
