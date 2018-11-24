@@ -110,7 +110,6 @@ body {
     float: right;
     width: 2.5rem;
     transition: 0.8s;
-    /* height: 2rem; */
 }
 .nav--menu--container {
     display: grid;
@@ -188,17 +187,20 @@ body {
 }
 .logo--container {
     display: grid;
+    width: 60%;
+    padding: 30px;
 }
 img.hero--logo {
-    width: 60%;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
 }
 .arrow--container {
     display: none;
 }
 img.hero--arrow {
-    height: 27px;
-    width: 50px;
+    height: 30px;
+    width: 54px;
     opacity: 0;
 }
 
@@ -340,9 +342,9 @@ img.hero--arrow {
 .text--description {
     font-family: 'Caveat Brush', cursive;
     font-size: 2.25rem;
-    line-height: 2.5rem;
+    line-height: 2.6rem;
     margin: 0;
-    opacity: 0.75;
+    color: #939393;
 }
 
 /*PORTRAITS*/
@@ -511,9 +513,13 @@ and (max-width: 800px) {
 .logo--container {
     display: grid;
     grid-area: logo;
+    width: 60%;
+    padding: 10px;
 }
 img.hero--logo {
-    width: 40%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 .arrow--container {
     grid-area: arrow;
@@ -638,6 +644,28 @@ img.hero--arrow {
     grid-template-rows: 70px 1fr 400px 230px 250px 175px;
 }
 
+.nav--hamburger {
+    display: none;
+}
+.nav--menu--container {
+    display: grid;
+    background-color: transparent;
+    justify-content: right;
+    align-content: center;
+    padding: 10px 15px;
+}
+#nav--menu {
+    margin: 0px;
+}
+.nav {
+    margin-right: 30px;
+}
+.nav--list-item {
+    display: inline-block;
+    padding-left: 25px;
+    font-size: 1.6rem;
+}
+
 .hero--container {
     height: 90vh;
 }
@@ -651,9 +679,13 @@ img.hero--arrow {
 .logo--container {
     display: grid;
     grid-area: logo;
+    width: 50%;
+    padding: 30px;
 }
 img.hero--logo {
-    width: 40%;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 .arrow--container {
     grid-area: arrow;
