@@ -28,7 +28,7 @@
           </nav>
         </div>
         <div class="nav--header--container">
-            <h1 class="header--title pink">Sarah Sugar <span class="header--light">& THC</span></h1>
+            <h1 class="header--title pink" id="website-title">Sarah Sugar <span class="header--light">& THC</span></h1>
             <div class="nav--hamburger--container">
                 <img class="nav--hamburger" id="hamburger" src="images/collapsed-menu.png"/>
               </div>
@@ -163,10 +163,28 @@
 
 </div>
 <script>
+    let browserWidth = window.innerWidth;
+
+    window.addEventListener('resize', () => {
+      browserWidth = window.innerWidth;
+      watchBrowser();
+    })
+
     const navigation = document.getElementById('nav--menu');
     
     const hamburger = document.getElementById('hamburger');
+
+    const title = document.getElementById('website-title');
     
+    watchBrowser = () => {
+      if (browserWidth >= 800) {
+        title.innerHTML = "Sarah Sugar <span class=\"header--light\">& The High Crimes</span>";
+      }
+      if (browserWidth < 800 ) {
+        title.innerHTML = "Sarah Sugar <span class=\"header--light\">& THC</span>";
+      }
+    };
+
     let navState = "closed";
 
     hamburger.addEventListener('click', () => {
@@ -181,6 +199,8 @@
         navState = "closed";
       }
     });
+
+    watchBrowser();
 
 
 </script>

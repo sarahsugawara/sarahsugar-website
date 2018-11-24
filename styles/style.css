@@ -108,7 +108,6 @@ body {
 }
 .nav--hamburger {
     float: right;
-    margin-right: 15px;
     width: 2.5rem;
     transition: 0.8s;
     /* height: 2rem; */
