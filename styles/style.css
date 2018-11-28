@@ -143,15 +143,6 @@ body {
     color: #525252;
 }
 
-
-/* .nav--menu--container {
-    margin: 0 auto;
-}
-.nav--hamburger--container {
-    float: right;
-    width: 50px;
-} */
-
 /*HERO*/
 .hero--container {
     grid-area: hero;
@@ -199,8 +190,8 @@ img.hero--logo {
     display: none;
 }
 img.hero--arrow {
-    height: 30px;
-    width: 54px;
+    height: 18px;
+    width: 32px;
     opacity: 0;
 }
 
@@ -244,7 +235,7 @@ img.hero--arrow {
 }
 .events--info {
     font-size: 1.6rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
     margin-top: 0;
 }
 .calendar--link--container {
@@ -679,7 +670,7 @@ img.hero--arrow {
 .logo--container {
     display: grid;
     grid-area: logo;
-    width: 50%;
+    width: 40%;
     padding: 30px;
 }
 img.hero--logo {
