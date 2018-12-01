@@ -505,7 +505,7 @@ h4.upcoming--date {
     font-size: 6rem;
     line-height: 1rem;
     letter-spacing: 1px;
-    margin: 1rem;
+    margin: 1rem 0rem;
     text-transform: uppercase;
     padding: 0;
     text-align: center;
@@ -660,10 +660,10 @@ and (max-width: 800px) {
     grid-template-rows: 70px 1fr 400px 230px 200px 175px;
 }
 
+/* HOMEPAGE GRID */
 .hero--container {
     height: 90vh;
 }
-
 .hero--logo--container {
     grid-template-rows: 1fr 60px;
     grid-template-areas:
@@ -688,7 +688,6 @@ img.hero--logo {
 img.hero--arrow {
     opacity: 1.0;
 }
-
 .blocks--container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2;
@@ -696,7 +695,6 @@ img.hero--arrow {
         "dates sarah"
         "music sarah";
 }
-
 .events--container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2;
@@ -712,44 +710,90 @@ img.hero--arrow {
     grid-column: 2 / 2;
     padding-right: 20px;
 }
-
 .music-titles {
     font-size: 1.2rem;
     line-height: 1.8rem;
 }
-
 .music-artist {
     font-size: 1.2rem;
     line-height: 1.8rem;
 }
-
 .about--container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
         "group description";
 }
-
 .text--description {
     font-size: 2rem;
     line-height: 2.4rem;
 }
-
 .links--caps {
     font-size: 1.2rem;
     text-align: right;
     display: inline-block;
 }
-
 .text--container {
     padding: 0px 40px;
 }
-
 .portraits--container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1;
     grid-template-areas:
         "arlie kris dan dave";
 }
+
+
+/*INTERIOR PAGES*/
+.grid-container--interior-page {
+    grid-template-rows: 70px 120px 1fr 250px 175px;
+}
+.interior--header--container h2 {
+    font-size: 5rem;
+}
+.interior--group-image--container {
+    height: 250px;
+}
+
+
+/*EVENTS PAGE*/
+.events--hero--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 1fr;
+}
+.upcoming--container {
+    height: 200px;
+}
+.upcoming--text--container {
+    padding-left: 30%;
+}
+h3.upcoming {
+    text-align: left;
+}
+h4.upcoming--date {
+    font-size: 8rem;
+    text-align: left;
+    padding-top: 1rem;
+}
+.upcoming--container--2 {
+    height: 200px;
+    padding-left: 10%;
+    padding-top: 30px;
+}
+.all-gigs--container {
+    grid-column: -1 / 1;
+    padding: 40px 15%;
+}
+.gig--container h3 {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+.gig--container h4 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+
+
+/* GLOBAL FOOTER */
 footer {
     grid-template-columns: 80% 20%;
     grid-template-rows: 50px 50px 75px;
@@ -800,6 +844,7 @@ and (min-width: 800px) {
     grid-template-rows: 70px 1fr 400px 230px 250px 175px;
 }
 
+/*GLOBAL NAVIGATION*/
 .nav--hamburger {
     display: none;
 }
@@ -884,8 +929,56 @@ img.hero--arrow {
         "arlie kris dan dave";
 }
 
+/*INTERIOR PAGES*/
+.grid-container--interior-page {
+    grid-template-rows: 70px 120px 1fr 375px 175px;
+}
+.interior--header--container h2 {
+    font-size: 5rem;
+}
+.interior--group-image--container {
+    height: 375px;
+}
 
-/*GLOAL FOOTER*/
+/*EVENTS PAGE*/
+.events--hero--container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 1fr;
+}
+.upcoming--container {
+    height: 200px;
+}
+.upcoming--text--container {
+    padding-left: 30%;
+}
+h3.upcoming {
+    text-align: left;
+}
+h4.upcoming--date {
+    font-size: 8rem;
+    text-align: left;
+    padding-top: 1rem;
+}
+.upcoming--container--2 {
+    height: 200px;
+    padding-left: 10%;
+    padding-top: 30px;
+}
+.all-gigs--container {
+    grid-column: -1 / 1;
+    padding: 40px 15%;
+}
+.gig--container h3 {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+.gig--container h4 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+
+
+/*GLOBAL FOOTER*/
 footer {
     grid-template-columns: 80% 20%;
     grid-template-rows: 50px 50px 75px;
