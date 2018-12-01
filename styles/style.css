@@ -47,6 +47,15 @@ body {
     align-content: center;
     background: rgba(82,82,82,0.35);
 }
+.image-overlay--dark-grey {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background: rgba(82,82,82,0.70);
+}
 .image-overlay--pink {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -405,28 +414,160 @@ img.hero--arrow {
 
 /*Modeled after grid-container from homepage*/
 .grid-container--interior-page {
-
+    display: grid;
+    grid-template-areas: 
+        "nav"
+        "header"
+        "body"
+        "group"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 70px 1fr 180px 275px; 
+    width: 100%;
 }
 .interior--header--container {
-
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    align-content: center;
+}
+.interior--header--container h2 {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
 }
 .interior--body--container {
-
+    grid-area: body;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
 }
+/* global image footer */
+.interior--group-image--container {
+    display: grid;
+    grid-area: group;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 180px;
+}
+.interior--group-image--container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
 
 /*EVENTS PAGE*/
 .events--hero--container {
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 150px 1fr;
+    width: 100%;
 }
 .upcoming--container {
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1;
+    height: 150px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.upcoming--text--container {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+.upcoming--container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+h3.upcoming {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2.6rem;
+    margin: 4rem 0rem 4rem 0rem;
+    padding: 0;
+    line-height: 1rem;
+    text-align: center;
+}
+h4.upcoming--date {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 6rem;
+    line-height: 1rem;
+    letter-spacing: 1px;
+    margin: 1rem;
+    text-transform: uppercase;
+    padding: 0;
+    text-align: center;
 }
 .upcoming--container--2 {
-
+    display: grid;
+    height: 150px;
+    padding: 20px;
+}
+.upcoming--container--2 p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    padding: 0;
+    margin: 0;
+}
+.all-gigs--container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1;
+    grid-auto-rows: 200px;
+    padding: 20px;
 }
 .gig--container {
-    
+    height: 200px;
 }
+.gig--container h3 {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F52A68;
+    margin: 0;
+}
+.gig--container h4 {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #525252;
+    margin: 5px 0px 10px 0px;
+    padding: 0;
+}
+.gig--container h5 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #525252;
+    margin: 0;
+    padding: 0;
+}
+.gig--container p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    color: #525252;
+    margin: 0;
+    padding: 0;
+}
+.facebook-link {
+    text-decoration: none;
+}
+
 
 /* GLOBAL FOOTER */
 footer {
@@ -655,10 +796,6 @@ footer {
 @media only screen 
 and (min-width: 800px) {
     
-img.hero--arrow {
-    opacity: 1;
-}
-
 .grid-container {
     grid-template-rows: 70px 1fr 400px 230px 250px 175px;
 }
@@ -685,6 +822,7 @@ img.hero--arrow {
     font-size: 1.6rem;
 }
 
+/*HOMEPAGE*/
 .hero--container {
     height: 90vh;
 }
@@ -710,7 +848,9 @@ img.hero--logo {
     grid-area: arrow;
     display: grid;
 }
-
+img.hero--arrow {
+    opacity: 1;
+}
 .blocks--container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2;
@@ -718,31 +858,25 @@ img.hero--logo {
         "dates sarah"
         "music sarah";
 }
-
 .events--container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1;
 }
-
 .calendar--link--container {
     grid-column: 2 / 2;
     padding-right: 20px;
 }
-
 .links--caps {
     text-align: right;
 }
-
 .about--container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
         "group description";
 }
-
 .text--container {
     padding: 0px 40px;
 }
-
 .portraits--container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1;
@@ -750,6 +884,8 @@ img.hero--logo {
         "arlie kris dan dave";
 }
 
+
+/*GLOAL FOOTER*/
 footer {
     grid-template-columns: 80% 20%;
     grid-template-rows: 50px 50px 75px;
