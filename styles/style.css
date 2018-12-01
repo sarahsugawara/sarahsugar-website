@@ -675,6 +675,33 @@ h4.upcoming--date {
     font-weight: 500;
 }
 
+
+/* CONTACT PAGE */
+.contact-info--container {
+    padding: 20px;
+}
+.contact-info--container h3 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #525252;
+}
+p.contact-info {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #525252;
+}
+.contact-info--container a {
+    color: #F52A68;
+}
+.contact-info--container h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #525252;
+}
+
+
 /* GLOBAL FOOTER */
 footer {
     grid-area: footer;
@@ -940,6 +967,13 @@ h4.upcoming--date {
 
 
 
+/* CONTACT PAGE */
+.contact-info--container {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
 
 /* GLOBAL FOOTER */
 footer {
@@ -1164,6 +1198,24 @@ h4.upcoming--date {
 .desktop-only {
     display: grid;
 }
+
+
+/* CONTACT PAGE */
+.contact-info--container {
+    padding-left: 15%;
+    padding-right: 40%;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}
+/* .contact-info--container h3 {
+    text-align: center;
+}
+p.contact-info {
+    text-align: center;
+}
+.contact-info--container h4 {
+    text-align: center;
+} */
 
 
 /*GLOBAL FOOTER*/
