@@ -48,33 +48,50 @@
             <h3 class="music--headlines grey now-playing">Now Playing</h3>
             <div class="music--player--container">
                 <div class="player--interface page--white">
-                  <img class="player--album-artwork" src="images/player_background@2x.png" />
-                  <button class="player--play-button" id="play" onclick="playAudio()"><img id="play-button" src="images/player_play-button@2x.png"/></button>
-                  <div class="player--progress-bar" id="progress"></div>
-                  <div class="player--song-title">
-                    <h3 class="music-titles grey">Cover of Shoot to Thrill</h3>
-                    <p class="music-artist grey">Original by AC/DC</p>
+                  <div class="player--album-artwork">
+                    <img class="album-artwork" src="images/player_background@2x.png" />
+                    <button class="player--play-button" id="play" onclick="playAudio()"><img id="play-button" src="images/player_play-button@2x.png"/></button>
                   </div>
-                  <audio controls="controls" id="audio_player">
-                    <source src="track.ogg" type="audio/ogg" />
-                    <source src="music/Supermassive-Black-Hole-by-Muse.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                  </audio>
+                  <div class="player--progress-bar" id="progress">
+                    <audio controls="controls" id="audio_player">
+                        <source src="track.ogg" type="audio/ogg" />
+                        <source src="music/Supermassive-Black-Hole-by-Muse.mp3" type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                      </audio>
+                  </div>
+                  <div class="player--song-title" id="player-title">
+                    <h3 class="music-titles grey">Cover of Highway Tune</h3>
+                    <p class="music-artist grey">Original by Greta Van Fleet</p>
+                  </div>
                 </div>
             </div>
             <div class="music--playbutton--container">
-                <img src="images/btn-play.png" />
+                <img src="images/btn-play.png" id="play-acdc"/>
             </div>
             <div class="music--titles--container">
                 <h3 class="music-titles grey">Cover of Shoot to Thrill</h3>
                 <p class="music-artist grey">Original by AC/DC</p>
             </div>
             <div class="music--playbutton--container">
-                <img src="images/btn-play.png" />
+                <img src="images/btn-play.png" id="play-muse"/>
             </div>
             <div class="music--titles--container">
-                <h3 class="music-titles grey">Cover of Highway Tune</h3>
-                <p class="music-artist grey">Original by Greta Van Fleet</p>
+                <h3 class="music-titles grey">Cover of Supermassive Black Hole</h3>
+                <p class="music-artist grey">Original by Muse</p>
+            </div>
+            <div class="music--playbutton--container">
+                <img src="images/btn-play.png" id="play-grace"/>
+            </div>
+            <div class="music--titles--container">
+                <h3 class="music-titles grey">Cover of Low Road</h3>
+                <p class="music-artist grey">Original by Grace Potter & the Nocturnals</p>
+            </div>
+            <div class="music--playbutton--container">
+                <img src="images/btn-play.png" id="play-judas"/>
+            </div>
+            <div class="music--titles--container">
+                <h3 class="music-titles grey">Cover of You've Got Another Thing Coming</h3>
+                <p class="music-artist grey">Original by Judas Priest</p>
             </div>
         </div>
         <div class="music--videos--container">
@@ -145,7 +162,16 @@
 
     const music = document.getElementById('audio_player');
     const playButton = document.getElementById('play-button');
+    const songTitle = document.getElementById('player-title');
  
+    const playAcdc = document.getElementById('play-acdc');
+    const playMuse = document.getElementById('play-muse');
+    const playGrace = document.getElementById('play-grace');
+    const playJudas = document.getElementById('play-judas');
+
+    const acdcTrack = '<source src="track.ogg" type="audio/ogg" /><source src="music/Shoot-to-Thrill-by-ACDC.mp3" type="audio/mpeg" />Your browser does not support the audio element.';
+
+    const acdcText = '<h3 class="music-titles grey">Cover of Shoot to Thrill</h3><p class="music-artist grey">Original by AC/DC</p>'
     
     watchBrowser = () => {
       if (browserWidth >= 500) {
@@ -182,6 +208,12 @@
       playButton.src = "images/player_play-button@2x.png";
     }
   };
+
+  playAcdc.addEventListener('click', () => {
+    music.innerHTML = acdcTrack;
+    songTitle.innerHTML = acdcText;
+    playAudio();
+  })
   
 
     watchBrowser();

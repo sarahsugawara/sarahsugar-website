@@ -582,9 +582,9 @@ h4.upcoming--date {
 .music--tracks--container {
     display: grid;
     grid-template-columns: 80px 1fr;
-    grid-template-rows: 50px 325px 50px;
+    grid-template-rows: 50px 350px 50px;
     grid-auto-rows: 50px;
-    grid-row-gap: 2rem;
+    grid-row-gap: 3rem;
     padding-bottom: 5rem;
 }
 /* Music player */
@@ -604,6 +604,10 @@ h4.upcoming--date {
     box-shadow: 0px 3px 10px rgba(82,82,82,0.35);
 }
 .player--album-artwork {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.album-artwork {
     grid-column: -1 / 1;
     grid-row: -1 / 1;
     object-fit: cover;
@@ -620,8 +624,7 @@ h4.upcoming--date {
     width: 60%;
 }
 .player--progress-bar {
-    background-color: #525252;
-    height: 15px;
+    /* background-color: #525252; */
     width: 100%;
     margin: 0;
     padding: 0;
@@ -631,7 +634,7 @@ h4.upcoming--date {
 }
 audio {
     width: 100%;
-    display: none;
+    /* display: none; */
 }
 
 .music--headlines {
