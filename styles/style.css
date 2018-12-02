@@ -741,6 +741,7 @@ footer {
     grid-area: links;
     display: grid;
     justify-content: center;
+    padding: 0px 30px;
 }
 .footer--title {
     text-transform: uppercase;
@@ -759,12 +760,12 @@ footer {
 }
 .footer--nav--list-item {
     font-size: 1.4rem;
-    line-height: 2rem;
+    line-height: 1rem;
     list-style-type: none;
     /* text-align: center; */
     margin: 0;
     display: inline-block;
-    padding: 12px;
+    padding: 12px 15px;
 }
 .footer--copyright--container {
     grid-area: copyright;
@@ -878,10 +879,10 @@ img.hero--arrow {
 
 /*INTERIOR PAGES*/
 .grid-container--interior-page {
-    grid-template-rows: 70px 120px 1fr 250px 175px;
+    grid-template-rows: 70px 100px 1fr 250px 175px;
 }
 .interior--header--container h2 {
-    font-size: 5rem;
+    font-size: 4.5rem;
 }
 .interior--group-image--container {
     height: 250px;
