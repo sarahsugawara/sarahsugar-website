@@ -46,6 +46,22 @@
     <div class="music--hero--container page--white">
         <div class="music--tracks--container">
             <h3 class="music--headlines grey now-playing">Now Playing</h3>
+            <div class="music--player--container">
+                <div class="player--interface page--white">
+                  <img class="player--album-artwork" src="images/player_background@2x.png" />
+                  <button class="player--play-button" id="play" onclick="playAudio()"><img id="play-button" src="images/player_play-button@2x.png"/></button>
+                  <div class="player--progress-bar" id="progress"></div>
+                  <div class="player--song-title">
+                    <h3 class="music-titles grey">Cover of Shoot to Thrill</h3>
+                    <p class="music-artist grey">Original by AC/DC</p>
+                  </div>
+                  <audio controls="controls" id="audio_player">
+                    <source src="track.ogg" type="audio/ogg" />
+                    <source src="music/Supermassive-Black-Hole-by-Muse.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+            </div>
             <div class="music--playbutton--container">
                 <img src="images/btn-play.png" />
             </div>
@@ -126,6 +142,10 @@
 
     const title = document.getElementById('website-title');
     const footerTitle = document.getElementById('footer--title');
+
+    const music = document.getElementById('audio_player');
+    const playButton = document.getElementById('play-button');
+ 
     
     watchBrowser = () => {
       if (browserWidth >= 500) {
@@ -153,7 +173,19 @@
       }
     });
 
+  playAudio = () => {
+    if (music.paused) {
+      music.play();
+      playButton.src = "images/player_pause-button@2x.png";
+    } else {
+      music.pause();
+      playButton.src = "images/player_play-button@2x.png";
+    }
+  };
+  
+
     watchBrowser();
+
 
 
 </script>
