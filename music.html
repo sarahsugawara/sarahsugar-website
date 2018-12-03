@@ -54,8 +54,8 @@
                   </div>
                   <div class="player--progress-bar" id="progress">
                     <audio controls="controls" id="audio_player">
-                        <source src="track.ogg" type="audio/ogg" />
-                        <source src="music/Supermassive-Black-Hole-by-Muse.mp3" type="audio/mpeg" />
+                        <source id="mp3Source" src="track.ogg" type="audio/ogg" />
+                        <source id="oggSource" src="music/Highway-Tune-by-Greta-Van-Fleet.mp3" type="audio/mpeg" />
                         Your browser does not support the audio element.
                       </audio>
                   </div>
@@ -66,28 +66,35 @@
                 </div>
             </div>
             <div class="music--playbutton--container">
-                <img src="images/btn-play.png" id="play-acdc"/>
+                <img src="images/btn-play.png" id="play-greta" data-value="music/Highway-Tune-by-Greta-Van-Fleet.mp3"/>
+            </div>
+            <div class="music--titles--container">
+                <h3 class="music-titles grey">Cover of Highway Tune</h3>
+                <p class="music-artist grey">Original by Greta Van Fleet</p>
+            </div>
+            <div class="music--playbutton--container">
+                <img src="images/btn-play.png" id="play-acdc" data-value="music/Shoot-to-Thrill-by-ACDC.mp3"/>
             </div>
             <div class="music--titles--container">
                 <h3 class="music-titles grey">Cover of Shoot to Thrill</h3>
                 <p class="music-artist grey">Original by AC/DC</p>
             </div>
             <div class="music--playbutton--container">
-                <img src="images/btn-play.png" id="play-muse"/>
+                <img src="images/btn-play.png" id="play-muse" data-value="music/Supermassive-Black-Hole-by-Muse.mp3"/>
             </div>
             <div class="music--titles--container">
                 <h3 class="music-titles grey">Cover of Supermassive Black Hole</h3>
                 <p class="music-artist grey">Original by Muse</p>
             </div>
             <div class="music--playbutton--container">
-                <img src="images/btn-play.png" id="play-grace"/>
+                <img src="images/btn-play.png" id="play-grace" data-value="music/Low-Road-by-Grace-Potter.mp3"/>
             </div>
             <div class="music--titles--container">
                 <h3 class="music-titles grey">Cover of Low Road</h3>
                 <p class="music-artist grey">Original by Grace Potter & the Nocturnals</p>
             </div>
             <div class="music--playbutton--container">
-                <img src="images/btn-play.png" id="play-judas"/>
+                <img src="images/btn-play.png" id="play-judas" data-value="music/Youve-Got-Another-Thing-Comin.mp3"/>
             </div>
             <div class="music--titles--container">
                 <h3 class="music-titles grey">Cover of You've Got Another Thing Coming</h3>
@@ -168,10 +175,13 @@
     const playMuse = document.getElementById('play-muse');
     const playGrace = document.getElementById('play-grace');
     const playJudas = document.getElementById('play-judas');
+    const playGreta = document.getElementById('play-greta');
 
-    const acdcTrack = '<source src="track.ogg" type="audio/ogg" /><source src="music/Shoot-to-Thrill-by-ACDC.mp3" type="audio/mpeg" />Your browser does not support the audio element.';
-
-    const acdcText = '<h3 class="music-titles grey">Cover of Shoot to Thrill</h3><p class="music-artist grey">Original by AC/DC</p>'
+    const acdcText = '<h3 class="music-titles grey">Cover of Shoot to Thrill</h3><p class="music-artist grey">Original by AC/DC</p>';
+    const museText = '<h3 class="music-titles grey">Cover of Supermassive Black Hole</h3><p class="music-artist grey">Original by Muse</p>';
+    const graceText = '<h3 class="music-titles grey">Cover of Low Road</h3><p class="music-artist grey">Original by Grace Potter & the Nocturnals</p>';
+    const judasText = '<h3 class="music-titles grey">Cover of You\'ve Got Another Thing Comin\'</h3><p class="music-artist grey">Original by Judas Priest</p>';
+    const gretaText = '<h3 class="music-titles grey">Cover of Highway Tune</h3><p class="music-artist grey">Original by Greta Van Fleet</p>';
     
     watchBrowser = () => {
       if (browserWidth >= 500) {
@@ -209,11 +219,62 @@
     }
   };
 
-  playAcdc.addEventListener('click', () => {
-    music.innerHTML = acdcTrack;
+  music.addEventListener('pause', () => {
+      playButton.src = "images/player_play-button@2x.png";
+  });
+  music.addEventListener('play', () => {
+      playButton.src = "images/player_pause-button@2x.png";
+  });
+
+  playAcdc.addEventListener('click', (e) => {
+    e.preventDefault();
+    const elm = e.target;
+    const source = document.getElementById('mp3Source');
+    source.src = elm.getAttribute('data-value');
     songTitle.innerHTML = acdcText;
-    playAudio();
-  })
+    music.load();
+    music.play();
+  });
+
+  playGrace.addEventListener('click', (e) => {
+    e.preventDefault();
+    const elm = e.target;
+    const source = document.getElementById('mp3Source');
+    source.src = elm.getAttribute('data-value');
+    songTitle.innerHTML = graceText;
+    music.load();
+    music.play();
+  });
+
+  playMuse.addEventListener('click', (e) => {
+    e.preventDefault();
+    const elm = e.target;
+    const source = document.getElementById('mp3Source');
+    source.src = elm.getAttribute('data-value');
+    songTitle.innerHTML = museText;
+    music.load();
+    music.play();
+  });
+
+  playJudas.addEventListener('click', (e) => {
+    e.preventDefault();
+    const elm = e.target;
+    const source = document.getElementById('mp3Source');
+    source.src = elm.getAttribute('data-value');
+    songTitle.innerHTML = judasText;
+    music.load();
+    music.play();
+  });
+
+  playGreta.addEventListener('click', (e) => {
+    e.preventDefault();
+    const elm = e.target;
+    const source = document.getElementById('mp3Source');
+    source.src = elm.getAttribute('data-value');
+    songTitle.innerHTML = gretaText;
+    music.load();
+    music.play();
+  });
   
 
     watchBrowser();
