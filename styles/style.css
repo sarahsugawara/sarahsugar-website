@@ -582,7 +582,7 @@ h4.upcoming--date {
 .music--tracks--container {
     display: grid;
     grid-template-columns: 80px 1fr;
-    grid-template-rows: 50px 350px 50px;
+    grid-template-rows: 30px 105vw 50px;
     grid-auto-rows: 50px;
     grid-row-gap: 3rem;
     padding-bottom: 5rem;
@@ -982,6 +982,10 @@ h4.upcoming--date {
     padding-left: 15%;
     padding-right: 15%;
 }
+.music--tracks--container {
+    grid-template-rows: 30px 70vw 50px;
+    grid-row-gap: 3rem;
+}
 .music--videos--container {
     grid-auto-rows: 45vw;
 }
@@ -1218,6 +1222,10 @@ h4.upcoming--date {
     padding-left: 15%;
     padding-right: 15%;
     grid-column-gap: 5rem;
+}
+.music--tracks--container {
+    grid-template-rows: 30px 40vw 50px;
+    grid-row-gap: 4rem;
 }
 .music--videos--container {
     grid-auto-rows: 20vw;
