@@ -72,18 +72,28 @@
   <!--Music Module-->
   <div class="music--container page--white">
     <div class="music--playbutton--container">
-      <img src="images/btn-play.png" />
+      <img src="images/btn-play.png" id="play-button-1"/>
     </div>
     <div class="music--titles--container">
       <h3 class="music-titles grey">Cover of Shoot to Thrill</h3>
       <p class="music-artist grey">Original by AC/DC</p>
+      <audio class="homepage--audio" controls="controls" id="audio_player_1">
+          <source src="music/Shoot-to-Thrill-by-ACDC.mp3" type="audio/mpeg" />
+          <source id="oggSource" src="track.ogg" type="audio/ogg" />
+          Your browser does not support the audio element.
+      </audio>
     </div>
     <div class="music--playbutton--container">
-      <img src="images/btn-play.png" />
+      <img src="images/btn-play.png" id="play-button-2"/>
     </div>
     <div class="music--titles--container">
-      <h3 class="music-titles grey">Cover of Highway Tune</h3>
-      <p class="music-artist grey">Original by Greta Van Fleet</p>
+      <h3 class="music-titles grey">Cover of Low Road</h3>
+      <p class="music-artist grey">Original by Grace Potter & the Nocturnals</p>
+      <audio class="homepage--audio" controls="controls" id="audio_player_2">
+          <source src="music/Low-Road-by-Grace-Potter.mp3" type="audio/mpeg" />
+          <source id="oggSource" src="track.ogg" type="audio/ogg" />
+          Your browser does not support the audio element.
+      </audio>
     </div>
     <div class="music--link--container">
       <a class="links--caps pink" href="www.google.com">View Music</a>
@@ -177,6 +187,12 @@
 
     const title = document.getElementById('website-title');
     const footerTitle = document.getElementById('footer--title');
+
+    const playButtonOne = document.getElementById('play-button-1');
+    const playButtonTwo = document.getElementById('play-button-2');
+
+    const playerOne = document.getElementById('audio_player_1');
+    const playerTwo = document.getElementById('audio_player_2');
     
     watchBrowser = () => {
       if (browserWidth >= 500) {
@@ -203,6 +219,26 @@
         navState = "closed";
       }
     });
+
+    playButtonOne.addEventListener('click', () => {
+      if (playerOne.paused) {
+        playerOne.play();
+        playButtonOne.src = "images/btn-pause.png";
+    } else {
+        playerOne.pause();
+        playButtonOne.src = "images/btn-play.png";
+    }
+    });
+    playButtonTwo.addEventListener('click', () => {
+      if (playerTwo.paused) {
+        playerTwo.play();
+        playButtonTwo.src = "images/btn-pause.png";
+    } else {
+        playerTwo.pause();
+        playButtonTwo.src = "images/btn-play.png";
+    }
+    });
+    
 
     watchBrowser();
 

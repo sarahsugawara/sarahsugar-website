@@ -267,9 +267,11 @@ img.hero--arrow {
     margin: 0;
 }
 .music--playbutton--container img {
-    width: 100%;
-    height: 100%;
+    width: 60%;
 }  
+.homepage--audio {
+    display: none;
+}
 .music--titles--container {
     display: grid;
     align-content: center;
@@ -684,7 +686,6 @@ audio {
 }
 .band-logo img {
     width: 100%;
-    opacity: 0.5;
 }
 .desktop-only {
     display: none;
