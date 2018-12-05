@@ -87,7 +87,7 @@ body {
         "portraits"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr 1015px 460px 376px 275px; 
+    grid-template-rows: 70px 225px 1015px 460px 376px 275px; 
     height: 100vh;
     width: 100%;
 }
@@ -101,6 +101,7 @@ body {
     order: 4;
     position: fixed;
     width: 100%;
+    z-index: 1;
     background-color: white;
 }
 .nav--header--container {
@@ -250,7 +251,7 @@ img.hero--arrow {
 .calendar--link--container {
     display: grid;
     grid-column: -1 / 1;
-    padding-left: 20px;
+    padding: 20px;
     background-color: #525252;
 }
 .music--container {
@@ -258,6 +259,7 @@ img.hero--arrow {
     display: grid;
     grid-template-columns: 80px 1fr;
     grid-template-rows: 3;
+    grid-row-gap: 1rem;
     padding: 20px;
 }
 .music--playbutton--container {
@@ -279,6 +281,7 @@ img.hero--arrow {
 .music--link--container {
     display: grid;
     align-content: center;
+    padding-top: 10px;
     grid-column: -1 / 1;
 }
 .music-titles {
@@ -594,6 +597,7 @@ h4.upcoming--date {
     display: grid;
     grid-column: -1 / 1;
     grid-template-columns: 1fr;
+    height: 60%;
     grid-template-rows: 1;
     justify-content: center;
 }
@@ -636,6 +640,7 @@ h4.upcoming--date {
 }
 audio {
     width: 100%;
+    z-index: -1
 }
 
 .music--headlines {
@@ -834,6 +839,16 @@ footer {
     opacity: 0.8;
 }
 
+/* iPHONE 8 PLUS MEDIA QUERY */
+@media only screen 
+and (min-width: 350px) 
+and (max-width: 800px) {
+
+.about--band-profiles--container {
+    grid-auto-rows: 425px;
+    grid-row-gap: 5rem;
+}
+}
 
 /*TABLET MEDIA QUERIES*/
 
@@ -882,7 +897,6 @@ img.hero--arrow {
 }
 .events--container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 2;
 }
 .events-one {
     padding: 20px;
@@ -893,7 +907,7 @@ img.hero--arrow {
 }
 .calendar--link--container {
     grid-column: 2 / 2;
-    padding-right: 20px;
+    padding: 0px 20px 0px 0px;
 }
 .music-titles {
     font-size: 1.2rem;
@@ -1144,11 +1158,10 @@ img.hero--arrow {
 }
 .events--container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1;
 }
 .calendar--link--container {
     grid-column: 2 / 2;
-    padding-right: 20px;
+    padding-right: 0px 20px 0px 0px;
 }
 .links--caps {
     text-align: right;
