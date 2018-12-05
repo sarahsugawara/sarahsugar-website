@@ -1091,7 +1091,8 @@ footer {
 /* DESKTOP MEDIA QUERIES */
 
 @media only screen 
-and (min-width: 800px) {
+and (min-width: 800px)
+and (max-width: 1200px) {
     
 .grid-container {
     grid-template-rows: 70px 1fr 400px 230px 250px 175px;
@@ -1330,4 +1331,12 @@ footer {
     text-align: left;
     padding-left: 25px;
 }
+}
+
+/* EXTRA LARGE DESKTOP */
+
+@media only screen
+and (min-width: 1200px) {
+
+    
 }
