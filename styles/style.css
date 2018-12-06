@@ -1174,6 +1174,9 @@ img.hero--arrow {
 .text--container {
     padding: 0px 40px;
 }
+.text--description {
+    line-height: 2.8rem;
+}
 .portraits--container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1;
