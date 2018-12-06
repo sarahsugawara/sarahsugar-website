@@ -87,7 +87,7 @@ body {
         "portraits"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 225px 1015px 460px 376px 275px; 
+    grid-template-rows: 70px 225px 1030px 460px 376px 275px; 
     height: 100vh;
     width: 100%;
 }
@@ -210,7 +210,7 @@ img.hero--arrow {
     grid-area: blocks;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3;
+    grid-template-rows: 405px 250px 375px;
     grid-template-areas:
         "dates"
         "music"
