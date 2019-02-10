@@ -184,7 +184,7 @@ body {
     justify-items: center;
     align-items: center;
     align-content: center;
-    background: rgba(245,42,104,0.75);
+    background: rgba(245,42,104,0.60);
 }
 .logo--container {
     display: grid;
