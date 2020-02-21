@@ -1,0 +1,6 @@
+{
+    "name": "sarah-sugar-website",
+    "version": 1,
+    "alias": ["sarahsugar.band", "www.sarahsugar.band"],
+    "pubic": true
+}
