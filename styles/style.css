@@ -670,7 +670,7 @@ audio {
     grid-template-areas:
         "logos"
         "paragraph"
-        "headshots"
+        "headshots";
 }
 .band-logos--container {
     display: grid;
