@@ -2,7 +2,7 @@
     "name": "sarah-sugar-website",
     "version": 2,
     "alias": ["sarahsugar.band", "www.sarahsugar.band"],
-    "pubic": true,
+    "public": true,
     "trailingSlash": false,
     "github": {
         "enabled": true
