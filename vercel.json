@@ -1,0 +1,12 @@
+{
+    "name": "sarah-sugar-website",
+    "version": 2,
+    "alias": ["sarahsugar.band", "www.sarahsugar.band"],
+    "pubic": true,
+    // "routes": [
+    //     { "src": "/_next/(.*)", "dest": "/_next/$1" },
+    //     { "src": "/static/(.*)", "dest": "/static/$1" },
+    //     { "src": "/(.*)", "dest": "/?color=$1" }      ]
+    "trailingSlash": false,
+    "github": true
+}

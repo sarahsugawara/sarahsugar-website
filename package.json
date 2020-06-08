@@ -1,0 +1,7 @@
+{
+    "name:" "sarah-sugar-website",
+    "scripts": {
+        "dev": "now dev",
+        
+    }
+}
